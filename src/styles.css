@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: "Open Sans",sans-serif;
+    line-height: 30px;
+}
+#wrapper {
+    margin-top: 50px;
+    width: 100%;
+}
+#page-wrapper {
+    background: #f3f3f3 none repeat scroll 0 0;
+    min-height: 600px;
+    padding: 15px;
+}
+#page-inner {
+    background-color: #fff !important;
+    margin: 10px 20px 10px 0;
+    min-height: 1050px;
+    padding: 10px;
+    width: 100%;
+}
+.pad-top {
+    padding-top: 15px;
+}
+.sidebar-collapse .nav {
+    padding: 50px 0 0;
+}
+.sidebar-collapse > .nav > li > a {
+    color: #214761;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 15px 10px;
+}
+.sidebar-collapse > .nav > li {
+    border-bottom: 1px solid #e1e1e1;
+}
+.sidebar-collapse .nav > li > a:hover, .sidebar-collapse .nav > li > a:focus {
+    background: #f3f3f3 none repeat scroll 0 0;
+    outline: 0 none;
+}
+.navbar-side {
+    background-color: #fff;
+    border: medium none;
+}
+.navbar-inverse {
+    background-color: #214761;
+    border-color: #f0f0f0;
+    min-height: 80px;
+}
+.nav > li > a > i {
+    margin-right: 10px;
+}
+.logout-spn {
+    color: #fff;
+    float: right;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 10px 25px 10px 50px;
+}
+.logout-spn a {
+    text-decoration: none;
+}
+.active-link {
+    background-color: #f3f3f3;
+}
+.div-square {
+    border: 3px double #e1e1e1;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 5px;
+}
+.div-square > a, .div-square > a:hover {
+    color: #808080;
+    text-decoration: none;
+}
+.footer {
+    background-color: #214761;
+    color: #fff;
+    padding: 20px 50px 20px 20px;
+    width: 100%;
+}
+.footer > a, .footer > a:hover {
+    color: #fff;
+}
+@media (min-width: 768px) {
+#page-wrapper {
+    /*margin: 0 0 0 260px;*/
+    min-height: 1050px;
+    padding: 15px 30px;
+}
+.navbar-side {
+    position: absolute;
+    width: 260px;
+    z-index: 1;
+}
+}
+.dashboard .glyphicon { font-size: 32px;}
+.dashboard .count-dash { color: #428bca; font-size: 16px; font-weight: bold; }
+.dashboard .danger-dash{color: #d9534f;}

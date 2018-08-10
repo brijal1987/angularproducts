@@ -8,9 +8,19 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
+        
         <div class="collapse navbar-collapse" id="myNavbar">
+            <ul *ngIf="isUserLoggedIn" class="nav navbar-nav navbar-right">
+                <li><a (click)="logoutClicked($event)">Logout</a></li>
+            </ul>
+            <ul *ngIf="!isUserLoggedIn" class="nav navbar-nav navbar-right">
+                <li><a href="#" routerLink="/login">Login</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">HOME</a></li>
+                <li><a href="#" routerLink="/products">Products</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" routerLink="/dashboard">Dashboard</a></li>
             </ul>
         </div>
     </div>

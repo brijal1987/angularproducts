@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { DashboardService } from './common/services/dashboard.service';
 import { UsercredentialsService } from './common/services/usercredentials.service';
 import { AuthGuard } from './common/guards/auth.guard';
 
@@ -13,11 +14,20 @@ import { LoginComponent } from './home/login/login.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ProductsComponent } from './home/products/products.component';
+import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
+import { AddproductComponent } from './home/products/addproduct/addproduct.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
+  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+  { path: 'product/add', component: AddproductComponent, canActivate: [AuthGuard] },
+  { path: 'product/edit/:id', component: AddproductComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: '**', component: PageNotFoundComponent }
 ]
 @NgModule({
   declarations: [
@@ -25,7 +35,11 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    ProductsComponent,
+    PageNotFoundComponent,
+    AddproductComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +49,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
+  	DashboardService,
   	UsercredentialsService,
     AuthGuard
   ],

@@ -1,0 +1,67 @@
+<div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                     <h2>DASHBOARD</h2>   
+                    </div>
+                </div>              
+                 <!-- /. ROW  -->
+                  <hr>
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <div class="alert alert-info">
+                            <h4>Welcome</h4> <strong> {{this.user.email}}</strong>
+                        </div>
+                       
+                    </div>
+                </div>
+
+              <!-- /. ROW  --> 
+                <div class="row text-center pad-top dashboard">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="div-square">
+                           
+ 						<span class="glyphicon glyphicon-tasks"></span>
+                      <h4 class="danger-dash">Total Products</h4>
+                     	<span class="count-dash">{{this.dashboardData.total_products}}</span>
+                      </div>
+                     
+                     
+                  </div> 
+                 
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="div-square">
+                           
+ 						<span class="glyphicon glyphicon-th-large"></span>
+                      <h4 class="danger-dash">Total Sale</h4>
+                      <span class="count-dash">{{this.dashboardData.total_sale}}</span>
+                      </div>
+                     
+                     
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="div-square">
+                           
+ 						<span class="glyphicon glyphicon-qrcode"></span>
+                      <h4 class="danger-dash">Total Earn Today</h4>
+                      <span class="count-dash">{{this.dashboardData.total_earn_today}}</span>
+                      </div>
+                     
+                     
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="div-square">
+                           
+ 						<span class="glyphicon glyphicon-signal"></span>
+                      	<h4 class="danger-dash">Total Earn this month</h4>
+                      <span class="count-dash">{{this.dashboardData.total_earn_month}}</span>
+                      </div>
+                     
+                     
+                  </div>
+                  
+              </div>
+                 
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>

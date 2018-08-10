@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output  } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsercredentialsService } from '../../common/services/usercredentials.service';
 
 
 import { User } from '../../common/models/user';
-import { Users } from '../../common/temp-userdata';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	
+  @Input() 
+  isUserLoggedIn: boolean = false;
+
+  
+
   loginForm: FormGroup;
   errorMsg: string = '';
-  users: User[] = Users;
+  users: User[];
   users1: User[];
-
   constructor(
     private builder: FormBuilder ,
     private router: Router,
@@ -40,13 +42,14 @@ export class LoginComponent implements OnInit {
   	}
 
     this.UsercredentialsService.login(credentials)
-    .subscribe((data: User[]) => {
-         //data = JSON.parse(JSON.stringify(data));
-    if(data == false){
-    console.log(1)
+    .subscribe((data) => {
+    if(data === 'false'){
+    	this.errorMsg = "Invalid Credentials"
     }
     else{
-    console.log(2)
+    	localStorage.setItem('user', JSON.stringify(data));
+      this.isUserLoggedIn = true;
+      this.router.navigate(['/dashboard']);
     }
     /*data = JSON.parse(JSON.stringify(data));
     var result = Object.keys(data).map(e=>data[e]);
