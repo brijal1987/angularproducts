@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { UsercredentialsService } from './common/services/usercredentials.service';
+import { AuthGuard } from './common/guards/auth.guard';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './home/login/login.component';
@@ -34,7 +35,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-  	UsercredentialsService
+  	UsercredentialsService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
