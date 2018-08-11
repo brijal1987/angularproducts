@@ -35,10 +35,59 @@ export class ProductService {
   }*/
   
   addProduct(product){
-	   return this.products.push(product);
+      for (let i in this.products) {
+        /*if(this.products[i].name == product.name){
+          return 'Product Name Exists!';
+        }
+        */
+        if(this.products[i].sku == product.sku){
+          return 'SKU Exists!';
+        }
+      }
+
+      let id = 0;
+      console.log(this.products.length)
+      for (let index in this.products) {
+        if(index == (this.products.length -1)){
+        console.log(this.products[index]  )
+          id = this.products[index].id;
+        }      
+      }
+      console.log(id + 1)
+     product.id = id + 1;
+     this.products.push(product);
+     return 'success';
+  }
+  
+  updateProduct(product, id){
+
+    for (let i in this.products) {
+      /*if(this.products[i].id !== id && this.products[i].name == product.name){
+        return 'Product Name Exists!';
+      }*/
+      if(this.products[i].id !== id && this.products[i].sku == product.sku){
+        return 'SKU Exists!';
+      }
+    }
+    product.id = id;
+    for (let index in this.products) {
+      if(this.products[index].id == id){
+        this.products[index] = product;
+      }
+    }
+     return 'success'; 
   }
   removeProduct(id){
-	   return this.products.splice(id,1);
+    let newArray = [];
+    for (let index in this.products) {
+      if(this.products[index].id == id){
+      }
+      else{
+        newArray.push(this.products[index]);
+      }
+    }
+    this.products = newArray;
+	   return this.products;
   }
   /*
   removeProduct(id): Observable<any> {

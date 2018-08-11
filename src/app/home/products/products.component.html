@@ -23,7 +23,7 @@
                         <th width="10%">Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngIf="products.length > 0">
                     <tr *ngFor="let product of products let idx = index">
                         <td>{{product.id}}</td>
                         <td>{{product.name}}</td>
@@ -40,6 +40,13 @@
                               </button>
                         </td>
                     </tr>
+
+                </tbody>
+                <tbody *ngIf="products.length === 0">
+                    <tr>
+                        <td align="center" colspan="5">No Products!</td>
+                    </tr>
+                                        
                 </tbody>
             </table>
         </div>                      

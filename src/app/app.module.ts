@@ -18,6 +18,7 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ProductsComponent } from './home/products/products.component';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
 import { AddproductComponent } from './home/products/addproduct/addproduct.component';
+import { EditproductComponent } from './home/products/editproduct/editproduct.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
   { path: 'product/add', component: AddproductComponent, canActivate: [AuthGuard] },
-  { path: 'product/edit/:id', component: AddproductComponent, canActivate: [AuthGuard] },
+  { path: 'product/edit/:id', component: EditproductComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent }
 ]
@@ -40,6 +41,7 @@ const routes: Routes = [
     ProductsComponent,
     PageNotFoundComponent,
     AddproductComponent,
+    EditproductComponent,
   ],
   imports: [
     BrowserModule,

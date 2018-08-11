@@ -21,7 +21,10 @@ export class ProductsComponent implements OnInit {
     let confirmed = confirm('Are you sure?');
 
     if(confirmed) {
-      this.products= this.ProductService.removeProduct(id);
+    	console.log(id)
+  		this.products= this.ProductService.removeProduct(id);
+  	 console.log(this.products)
+		this.successMsg = "Product Deleted";
     }    
   }
 

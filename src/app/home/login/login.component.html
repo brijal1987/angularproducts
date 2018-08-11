@@ -5,7 +5,6 @@
         <!-- <app-alert></app-alert> -->
       </div>
     </div>
-    <h2>Login</h2>
 <div *ngIf="errorMsg !== ''" class="alert alert-danger">{{errorMsg}}</div>
 <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()">
 
