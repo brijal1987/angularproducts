@@ -20,11 +20,25 @@ export class ProductService {
 	return this.products;  
   }
   
+  getProductById(id){
+    let productObj = [];
+    this.products.forEach(obj => {
+        if(obj.id == id){
+          productObj.push(obj);
+        }
+    }); 
+
+    return productObj;  
+  }
+  /*getProductById(id): Observable<Product> {
+      //Call webservice
+  }*/
+  
   addProduct(product){
-	return this.products.push(product);
+	   return this.products.push(product);
   }
   removeProduct(id){
-	return this.products.splice(id,1);
+	   return this.products.splice(id,1);
   }
   /*
   removeProduct(id): Observable<any> {

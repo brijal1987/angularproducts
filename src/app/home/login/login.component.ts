@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   
   ngOnInit() {
     this.loginForm = this.builder.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email, Validators.minLength(4)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
     })
     console.log( this.users)
   }
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     var result = Object.keys(data).map(e=>data[e]);
 
     console.log(result);
-*/
+    */
        // this.users = data;
        // console.log(this.users[0])
     });
