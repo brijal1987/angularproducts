@@ -38,9 +38,12 @@ export class AddproductComponent implements OnInit {
   	}
   	let response = this.ProductService.addProduct(productObject);
   	if(response === 'success'){
-
-	  	this.successMsg = "Product Added";
-	  	this.router.navigate(['/products']);
+	    this.successMsg = "Product Added";
+	    alert("Product Added")
+  	 	
+  	 	setTimeout(() => {
+	  		this.router.navigate(['/products']);
+		}, 1000);
   	}
   	else{
   		this.errorMsg = response;

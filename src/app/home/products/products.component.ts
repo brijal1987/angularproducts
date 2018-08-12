@@ -8,14 +8,13 @@ import { ProductService } from '../../common/services/product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-	
-  products: Product[] ;
+  	products: Product[] = [];
 	errorMsg: string = '';
 	successMsg: string = '';
   constructor(private ProductService: ProductService) { }
   ngOnInit() {
   	this.products= this.ProductService.getProducts();
-  	 console.log(this.products)
+  	
   }
   remove(id) {
     let confirmed = confirm('Are you sure?');
@@ -23,7 +22,7 @@ export class ProductsComponent implements OnInit {
     if(confirmed) {
     	console.log(id)
   		this.products= this.ProductService.removeProduct(id);
-  	 console.log(this.products)
+
 		this.successMsg = "Product Deleted";
     }    
   }

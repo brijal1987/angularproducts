@@ -14,7 +14,13 @@ import { Products } from '../data/temp-products';
 })
 export class ProductService {
 	products: Product[] = Products ;
+  jsonproducts: Product[] = [] ;
   constructor(private http: HttpClient) { }
+  
+  getJsonProducts(){
+
+    return this.http.get( './assets/data/products.json', {responseType: 'text'});
+  }
   
   getProducts(){
 	return this.products;  
@@ -49,11 +55,9 @@ export class ProductService {
       console.log(this.products.length)
       for (let index in this.products) {
         if(index == (this.products.length -1)){
-        console.log(this.products[index]  )
           id = this.products[index].id;
         }      
       }
-      console.log(id + 1)
      product.id = id + 1;
      this.products.push(product);
      return 'success';
@@ -65,7 +69,7 @@ export class ProductService {
       /*if(this.products[i].id !== id && this.products[i].name == product.name){
         return 'Product Name Exists!';
       }*/
-      if(this.products[i].id !== id && this.products[i].sku == product.sku){
+      if(this.products[i].id != id && this.products[i].sku == product.sku){
         return 'SKU Exists!';
       }
     }

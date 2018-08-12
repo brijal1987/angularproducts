@@ -53,8 +53,13 @@ export class EditproductComponent implements OnInit {
   	let response = this.ProductService.updateProduct(productObject, id);
 
   	if(response === 'success'){
-	  	this.successMsg = "Product Updated";
-	  	this.router.navigate(['/products']);
+	  	
+	    this.successMsg = "Product Updated";
+	    alert("Product Updated");
+  	 	
+  	 	setTimeout(() => {
+  	 		this.router.navigate(['/products']);
+		}, 1000);
   	}
   	else{
   		this.errorMsg = response;

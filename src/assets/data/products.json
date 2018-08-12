@@ -1,0 +1,14 @@
+[
+    {
+        id: 1,
+        name: "Iphone X",
+        sku: 1212,
+		description: "This is Iphone X"
+    },
+	{
+        id: 2,
+        name: "Iphone 6",
+        sku: 12122,
+		description: "This is Iphone 6"
+    },
+]
