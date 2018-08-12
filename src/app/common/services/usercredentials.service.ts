@@ -9,6 +9,7 @@ import { Users } from '../data/temp-userdata';
 
 import {map, catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
+import {Md5} from 'ts-md5/dist/md5'; 
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +23,12 @@ export class UsercredentialsService {
   }
 
   login(creds): Observable<any> {
-    
+    const md5 = new Md5();
+    let insertedPassword = md5.appendStr(creds.password).end();
       return this.getConfig()
       .pipe(map(user => {
           this.users.forEach(obj => {
-              if(creds.email == obj.email && creds.password == obj.password){
+              if(creds.email == obj.email && insertedPassword == obj.password){
               	user = creds;
               }
               else{
