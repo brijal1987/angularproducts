@@ -19,7 +19,7 @@
 
 		  <div class="form-group" [ngClass]="{ 'has-error': productForm.get('sku').touched && productForm.get('sku').invalid }">
 		    <label for="sku" class="control-label">Product SKU ID*</label>
-		    <input type="number" id="sku" class="form-control" formControlName="sku">
+		    <input type="text"  OnlyNumber="true" id="sku" class="form-control" formControlName="sku">
 		    <span *ngIf="productForm.get('sku').touched && productForm.get('sku').invalid && productForm.get('sku').errors.required" class="help-block">Product SKU ID can't be blank.</span>
 		  </div>
 

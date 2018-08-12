@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { OnlyNumber } from './common/directive/number.directive';
 
 
 import { DashboardService } from './common/services/dashboard.service';
@@ -42,6 +43,7 @@ const routes: Routes = [
     PageNotFoundComponent,
     AddproductComponent,
     EditproductComponent,
+    OnlyNumber
   ],
   imports: [
     BrowserModule,
