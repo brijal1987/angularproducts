@@ -53,7 +53,7 @@ export class ProductService {
 
       let id = 0;
       console.log(this.products.length)
-      for (let index in this.products) {
+      for (var index=0; index<this.products.length; index++) {
         if(index == (this.products.length -1)){
           id = this.products[index].id;
         }      
