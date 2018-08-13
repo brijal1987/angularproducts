@@ -8,10 +8,11 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        
+        <input id="loginElemt" value="1234" type="hidden" (click)="logInClicked($event)" />
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul *ngIf="isUserLoggedIn" class="nav navbar-nav navbar-right">
-                <li><a (click)="logoutClicked($event)">Logout</a></li>
+                <li><a style="cursor: pointer;" (click)="logoutClicked($event)">Logout</a>
+                </li>
             </ul>
             <ul *ngIf="!isUserLoggedIn" class="nav navbar-nav navbar-right">
                 <li><a href="#" routerLink="/login">Login</a></li>

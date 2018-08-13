@@ -47,8 +47,11 @@ export class LoginComponent implements OnInit {
     	this.errorMsg = "Invalid Credentials"
     }
     else{
+
     	localStorage.setItem('user', JSON.stringify(data));
       this.isUserLoggedIn = true;
+      let el: HTMLElement = document.getElementById('loginElemt') as HTMLElement;
+      el.click()
       this.router.navigate(['/dashboard']);
     }
     /*data = JSON.parse(JSON.stringify(data));

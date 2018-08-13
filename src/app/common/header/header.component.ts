@@ -28,5 +28,8 @@ export class HeaderComponent implements OnInit {
   	this.isUserLoggedIn = false;
   	this.router.navigate(['/login'])
   }
+  logInClicked(){
+    this.isUserLoggedIn = true;
+  }
 
 }
