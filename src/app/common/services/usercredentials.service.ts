@@ -28,7 +28,7 @@ export class UsercredentialsService {
       return this.getConfig()
       .pipe(map(user => {
           this.users.forEach(obj => {
-              if(creds.email == obj.email && insertedPassword == obj.password){
+              if(creds.email == obj.email && insertedPassword == obj.password && obj.token =='1234'){
               	user = creds;
               }
               else{
