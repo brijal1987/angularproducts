@@ -31,7 +31,10 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.builder.group({
       email: ['', Validators.compose([Validators.required, Validators.email, Validators.minLength(4)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-    })
+    });
+    if(localStorage.getItem('user')){
+      this.router.navigate(['/dashboard']);
+    }
     console.log( this.users)
   }
 
